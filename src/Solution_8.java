@@ -1,4 +1,3 @@
-
 public class Solution_8 {
 	public int bestSolution(String s) {
 		if(s.isEmpty())
@@ -61,16 +60,16 @@ public class Solution_8 {
             return false;
         }
         int index = 0;
-        int sum = 0; // ¼ÇÂ¼ÀÛ¼Ó½á¹û
+        int sum = 0; // ï¿½ï¿½Â¼ï¿½Û¼Ó½ï¿½ï¿½
         while(index < length) {
             int digit = str.charAt(index) - '0';
-            // ÕâÀï¼Ù¶¨strÊÇºÏ·¨µÄ×Ö·û´®£¬²»ÐèÒª½øÐÐdigitºÏ·¨ÐÔÅÐ¶Ï
+            // ï¿½ï¿½ï¿½ï¿½Ù¶ï¿½strï¿½ÇºÏ·ï¿½ï¿½ï¿½ï¿½Ö·ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Òªï¿½ï¿½ï¿½ï¿½digitï¿½Ï·ï¿½ï¿½ï¿½ï¿½Ð¶ï¿½
 
             if(Integer.MAX_VALUE/10 < sum || (Integer.MAX_VALUE/10 == sum && Integer.MAX_VALUE % 10 < digit)) {
-                // ËµÃ÷Òç³ö
+                // Ëµï¿½ï¿½ï¿½ï¿½ï¿½
                 return true;
             }
-            // ËµÃ÷»¹Ã»ÓÐÒç³ö
+            // Ëµï¿½ï¿½ï¿½ï¿½Ã»ï¿½ï¿½ï¿½ï¿½ï¿½
             sum = sum * 10 + digit;
             index ++;
         }
