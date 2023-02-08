@@ -1,5 +1,6 @@
-mod solution_50;
+mod solution_32;
 fn main() {
-    let res = solution_50::my_pow(2.000, 10);
+    let str = String::from(")()())");
+    let res = solution_32::longest_valid_parentheses(str);
     println!("{:?}", res);
 }
