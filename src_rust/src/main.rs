@@ -1,5 +1,5 @@
-mod solution_38;
+mod solution_50;
 fn main() {
-    
-    println!("Hello, world!");
+    let res = solution_50::my_pow(2.000, 10);
+    println!("{:?}", res);
 }
