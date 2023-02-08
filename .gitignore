@@ -3,3 +3,4 @@ src_rust/target/
 *.exe
 *.lock
 *.toml
+main.rs
