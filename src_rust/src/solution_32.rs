@@ -18,6 +18,5 @@ pub fn longest_valid_parentheses(s: String) -> i32 {
             }
         }
     }
-
     max_len
 }

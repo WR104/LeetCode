@@ -1,6 +1,6 @@
-mod solution_32;
+mod solution_63;
 fn main() {
-    let str = String::from(")()())");
-    let res = solution_32::longest_valid_parentheses(str);
+    let g = vec![vec![0,0,0], vec![0,1,0], vec![0,0,0]];
+    let res = solution_63::unique_paths_with_obstacles(g);
     println!("{:?}", res);
 }
