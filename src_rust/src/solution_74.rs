@@ -1,40 +1,29 @@
-/*
- * @lc app=leetcode id=74 lang=rust
- *
- * [74] Search a 2D Matrix
- */
-
-// @lc code=start
-
-impl Solution {
-    pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
-        let mut left = 0;
-        let mut right = matrix.len() - 1;
-        while left <= right {
-            let mid  = (right + left) / 2;
-            if matrix[mid][0] <= target{
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
+use std::cmp::Ordering::{Equal, Greater, Less};
+pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
+    let m = matrix.len() as i32;
+    let n = matrix[0].len() as i32;
+    let mut left: i32 = 0;
+    let mut right: i32 = m * n - 1;
+    
+    while left <= right {
+        let mid = (left + right + 1) / 2;
+        let (row, col) = ((mid / n) as usize, (mid % n) as usize);
+        match target.cmp(&matrix[row][col]){
+            Equal => return true,
+            Less => left = mid + 1,
+            Greater => right = mid -1,
         }
-        let row = right;
-        left = 0;
-        right = matrix[row].len() - 1;
-        while left <= right {
-            let mid = (right + left) / 2;
-            if matrix[row][mid] == target{
-                return true;
-            } else if matrix[row][mid] <= target {
-                left = mid + 1;
-            } else {
-                right = mid - 1;
-            }
-        }
-        false
     }
+    false
 }
 
-pub struct Solution{}
-// @lc code=end
+#[cfg(test)]
+mod tests {
+    use super::*;
 
+    #[test]
+    fn test_74() {
+        assert_eq!(search_matrix(vec![vec![1]], 0), false);
+        assert_eq!(search_matrix(vec![vec![1],vec![3]], 3), true);
+    }
+}
