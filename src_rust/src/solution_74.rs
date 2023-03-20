@@ -4,7 +4,6 @@ pub fn search_matrix(matrix: Vec<Vec<i32>>, target: i32) -> bool {
     let n = matrix[0].len() as i32;
     let mut left: i32 = 0;
     let mut right: i32 = m * n - 1;
-    
     while left <= right {
         let mid = (left + right + 1) / 2;
         let (row, col) = ((mid / n) as usize, (mid % n) as usize);
