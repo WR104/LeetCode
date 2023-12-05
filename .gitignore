@@ -5,3 +5,5 @@ src_rust/target/
 *.toml
 main.*
 *.pdb
+__pycache__
+.DS_Store
